@@ -50,6 +50,8 @@ public class Solver {
         answer = initSolvable(currentNode);
         break;
       }
+      // There are unsolvable boards. However, all unsolvable boards have a solvable twin
+      // that differs in just a single pair. Therefore, we solve 2 boards to find this out!
       currentNode = search(twinSearchTree);
       if (currentNode.state.isGoal()) {
         answer = null;
